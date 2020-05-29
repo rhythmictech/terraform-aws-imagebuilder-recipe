@@ -1,3 +1,3 @@
-output "component_arn" {
+output "recipe_arn" {
   value = aws_cloudformation_stack.this.outputs["recipeArn"]
 }
