@@ -1,5 +1,5 @@
 Resources:
-  imageBuildRecipe:
+  ImageBuildRecipe:
     Type: AWS::ImageBuilder::ImageRecipe
     Properties:
       %{~ if block_device_mappings != null ~}
@@ -24,6 +24,6 @@ Resources:
       Tags:
         ${ indent(8, chomp(yamlencode(tags))) }
 Outputs:
-  recipeArn:
+  RecipeArn:
     Description: ARN of the created component
-    Value: !Ref "imageBuildRecipe"
+    Value: !Ref "ImageBuildRecipe"
