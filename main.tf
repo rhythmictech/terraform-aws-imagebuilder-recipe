@@ -13,7 +13,7 @@ resource "aws_cloudformation_stack" "this" {
     version               = var.recipe_version
 
     components = [
-      for component in var.components : {
+      for component in var.component_arns : {
         ComponentArn = component
       }
     ]
