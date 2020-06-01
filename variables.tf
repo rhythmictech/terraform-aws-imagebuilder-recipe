@@ -20,7 +20,7 @@ variable "block_device_mappings" {
   )
 }
 
-variable "components" {
+variable "component_arns" {
   description = "List of component ARNs to use in recipe. Order matters"
   type        = list(string)
 }
