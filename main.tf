@@ -1,7 +1,7 @@
 resource "aws_cloudformation_stack" "this" {
   name               = var.name
   on_failure         = "ROLLBACK"
-  timeout_in_minutes = var.timeout
+  timeout_in_minutes = var.cloudformation_timeout
 
   template_body = templatefile("${path.module}/cloudformation.yml.tpl", {
     block_device_mappings = var.block_device_mappings
