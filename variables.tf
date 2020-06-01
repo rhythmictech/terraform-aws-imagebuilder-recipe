@@ -58,7 +58,7 @@ variable "tags" {
   type        = map(string)
 }
 
-variable "timeout" {
+variable "cloudformation_timeout" {
   default     = 10
   description = "How long to wait (in minutes) for CFN to apply before giving up"
   type        = number
