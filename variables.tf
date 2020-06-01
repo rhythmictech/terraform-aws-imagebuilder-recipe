@@ -20,6 +20,12 @@ variable "block_device_mappings" {
   )
 }
 
+variable "cloudformation_timeout" {
+  default     = 10
+  description = "How long to wait (in minutes) for CFN to apply before giving up"
+  type        = number
+}
+
 variable "component_arns" {
   description = "List of component ARNs to use in recipe. Order matters"
   type        = list(string)
@@ -57,12 +63,6 @@ variable "tags" {
   default     = {}
   description = "map of tags to use for CFN stack and component"
   type        = map(string)
-}
-
-variable "cloudformation_timeout" {
-  default     = 10
-  description = "How long to wait (in minutes) for CFN to apply before giving up"
-  type        = number
 }
 
 variable "update" {
