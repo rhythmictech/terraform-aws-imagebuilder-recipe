@@ -1,5 +1,5 @@
 # terraform-aws-imagebuilder-recipe [![](https://github.com/rhythmictech/terraform-aws-imagebuilder-recipe/workflows/pre-commit-check/badge.svg)](https://github.com/rhythmictech/terraform-aws-imagebuilder-recipe/actions) <a href="https://twitter.com/intent/follow?screen_name=RhythmicTech"><img src="https://img.shields.io/twitter/follow/RhythmicTech?style=social&logo=RhythmicTech" alt="follow on Twitter"></a>
-Template repository for terraform modules. Good for any cloud and any provider.
+Creates EC2 Image Builder recipes by wrapping CloudFormatione
 
 ## Example
 Here's what using the module will look like
