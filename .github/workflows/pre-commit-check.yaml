@@ -13,14 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install prerequisites
-        run: |
-          brew tap liamg/tfsec
-          brew install tfenv tflint terraform-docs pre-commit liamg/tfsec/tfsec
-          pre-commit install
-          tfenv install min-required
-          tfenv use min-required
+        run: ./bin/install-macos.sh
       - name: initiallize Terraform
-        run: terraform init
+        run: terraform init --backend=false
       - uses: actions/cache@v1
         with:
           path: ~/.cache/pre-commit

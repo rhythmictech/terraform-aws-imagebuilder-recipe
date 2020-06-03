@@ -30,7 +30,7 @@ Creates EC2 Image Builder recipes by wrapping CloudFormation
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.0 |
+| terraform | >= 0.12.2 |
 | aws | ~> 2.44 |
 
 ## Providers
