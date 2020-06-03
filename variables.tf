@@ -1,6 +1,6 @@
 variable "block_device_mappings" {
   default     = null
-  description = "List of Maps of EBS volumes to mount https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-instanceblockdevicemapping.html"
+  description = "[List of Maps of EBS volumes to mount](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-instanceblockdevicemapping.html)"
 
   type = list(
     object({
@@ -50,7 +50,7 @@ variable "parent_image" {
 # TODO: add validation
 variable "platform" {
   default     = "Linux"
-  description = "platform of Recipe (Linux or Windows)"
+  description = "Platform of Recipe (`Linux` or `Windows`)"
   type        = string
 }
 
@@ -61,12 +61,12 @@ variable "recipe_version" {
 
 variable "tags" {
   default     = {}
-  description = "map of tags to use for CFN stack and component"
+  description = "Map of tags to use for CFN stack and component"
   type        = map(string)
 }
 
 variable "update" {
   default     = true
-  description = "Whether recipe should include the update-platform recipe before running other components"
+  description = "Whether recipe should include the `update-$platform` recipe before running other components"
   type        = bool
 }

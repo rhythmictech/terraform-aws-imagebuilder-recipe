@@ -1,3 +1,4 @@
 output "recipe_arn" {
-  value = aws_cloudformation_stack.this.outputs["RecipeArn"]
+  description = "ARN of the EC2 Image Builder Recipe"
+  value       = aws_cloudformation_stack.this.outputs["RecipeArn"]
 }
