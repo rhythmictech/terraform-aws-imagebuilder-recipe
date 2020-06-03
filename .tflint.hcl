@@ -1,6 +1,6 @@
 config {
-  module = true
-  deep_check = true
+  module     = true
+  deep_check = false
 }
 
 rule "terraform_deprecated_interpolation" {
@@ -33,7 +33,7 @@ rule "terraform_module_pinned_source" {
 
 rule "terraform_naming_convention" {
   enabled = true
-  format = "snake_case"
+  format  = "snake_case"
 }
 
 rule "terraform_required_version" {
