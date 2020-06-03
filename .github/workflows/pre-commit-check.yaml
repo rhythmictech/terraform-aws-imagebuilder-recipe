@@ -26,7 +26,7 @@ jobs:
           path: ~/.cache/pre-commit
           key: pre-commit|${{ hashFiles('.pre-commit-config.yaml') }}
           restore-keys:
-            - pre-commit|${{ hashFiles('.pre-commit-config.yaml') }}
+            - pre-commit${{ hashFiles('.pre-commit-config.yaml') }}
             - pre-commit
       - name: pre-commit run all
         run: |
