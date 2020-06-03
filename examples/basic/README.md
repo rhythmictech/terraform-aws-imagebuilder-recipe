@@ -3,7 +3,8 @@
 ## Code
 ```hcl
 module "test_recipe" {
-  source  = "../../"
+  source  = "rhythmictech/imagebuilder-recipe/aws"
+  version = "~> 0.2.0"
 
   description    = "Testing recipe"
   name           = "test-recipe"

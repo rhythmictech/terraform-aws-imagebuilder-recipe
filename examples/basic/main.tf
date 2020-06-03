@@ -22,7 +22,7 @@ module "tags" {
 
 module "test_component" {
   source  = "rhythmictech/imagebuilder-component-ansible/aws"
-  version = "~> 0.1.0"
+  version = "~> 0.2.0"
 
   component_version = "1.0.0"
   description       = "Testing component"
@@ -33,7 +33,8 @@ module "test_component" {
 }
 
 module "test_recipe" {
-  source = "../../"
+  source  = "rhythmictech/imagebuilder-recipe/aws"
+  version = "~> 0.2.0"
 
   description    = "Testing recipe"
   name           = "test-recipe"
