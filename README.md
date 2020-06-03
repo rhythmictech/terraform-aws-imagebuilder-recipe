@@ -28,36 +28,36 @@ Creates EC2 Image Builder recipes by wrapping CloudFormation
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-| Name      | Version   |
-|-----------|-----------|
+| Name | Version |
+|------|---------|
 | terraform | >= 0.12.0 |
-| aws       | ~> 2.44   |
+| aws | ~> 2.44 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws  | ~> 2.44 |
+| aws | ~> 2.44 |
 
 ## Inputs
 
-| Name                    | Description                                                                                                                                                                    | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Default   | Required |
-|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|:--------:|
-| component\_arns         | List of component ARNs to use in recipe. Order matters                                                                                                                         | `list(string)`                                                                                                                                                                                                                                                                                                                                                                                                                                                     | n/a       |   yes    |
-| name                    | name to use for component                                                                                                                                                      | `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                           | n/a       |   yes    |
-| parent\_image           | Image that the recipe should start with. SemVers is ok (and encouraged)                                                                                                        | `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                           | n/a       |   yes    |
-| recipe\_version         | Version of the recipe                                                                                                                                                          | `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                           | n/a       |   yes    |
-| block\_device\_mappings | [List of Maps of EBS volumes to mount](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-instanceblockdevicemapping.html) | <pre>list(<br>    object({<br>      DeviceName = string<br>      Ebs = object({<br>        DeleteOnTermination = bool<br>        Encrypted           = bool<br>        Iops                = number<br>        KmsKeyId            = string<br>        SnapshotId          = string<br>        VolumeSize          = number<br>        VolumeType          = string<br>      })<br>      NoDevice    = string<br>      VirtualName = string<br>    })<br>  )</pre> | `null`    |    no    |
-| cloudformation\_timeout | How long to wait (in minutes) for CFN to apply before giving up                                                                                                                | `number`                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `10`      |    no    |
-| description             | description of component                                                                                                                                                       | `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `null`    |    no    |
-| platform                | Platform of Recipe (`Linux` or `Windows`)                                                                                                                                      | `string`                                                                                                                                                                                                                                                                                                                                                                                                                                                           | `"Linux"` |    no    |
-| tags                    | Map of tags to use for CFN stack and component                                                                                                                                 | `map(string)`                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `{}`      |    no    |
-| update                  | Whether recipe should include the `update-$platform` recipe before running other components                                                                                    | `bool`                                                                                                                                                                                                                                                                                                                                                                                                                                                             | `true`    |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| component\_arns | List of component ARNs to use in recipe. Order matters | `list(string)` | n/a | yes |
+| name | name to use for component | `string` | n/a | yes |
+| parent\_image | Image that the recipe should start with. SemVers is ok (and encouraged) | `string` | n/a | yes |
+| recipe\_version | Version of the recipe | `string` | n/a | yes |
+| block\_device\_mappings | [List of Maps of EBS volumes to mount](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-instanceblockdevicemapping.html) | <pre>list(<br>    object({<br>      DeviceName = string<br>      Ebs = object({<br>        DeleteOnTermination = bool<br>        Encrypted           = bool<br>        Iops                = number<br>        KmsKeyId            = string<br>        SnapshotId          = string<br>        VolumeSize          = number<br>        VolumeType          = string<br>      })<br>      NoDevice    = string<br>      VirtualName = string<br>    })<br>  )</pre> | `null` | no |
+| cloudformation\_timeout | How long to wait (in minutes) for CFN to apply before giving up | `number` | `10` | no |
+| description | description of component | `string` | `null` | no |
+| platform | Platform of Recipe (`Linux` or `Windows`) | `string` | `"Linux"` | no |
+| tags | Map of tags to use for CFN stack and component | `map(string)` | `{}` | no |
+| update | Whether recipe should include the `update-$platform` recipe before running other components | `bool` | `true` | no |
 
 ## Outputs
 
-| Name        | Description                         |
-|-------------|-------------------------------------|
+| Name | Description |
+|------|-------------|
 | recipe\_arn | ARN of the EC2 Image Builder Recipe |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
