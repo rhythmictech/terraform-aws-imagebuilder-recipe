@@ -1,6 +1,7 @@
 Resources:
   ImageBuildRecipe:
     Type: AWS::ImageBuilder::ImageRecipe
+    UpdateReplacePolicy: Retain
     Properties:
       %{~ if block_device_mappings != null ~}
       BlockDeviceMappings:
