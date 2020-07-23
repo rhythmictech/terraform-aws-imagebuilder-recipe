@@ -4,16 +4,8 @@ variable "block_device_mappings" {
 
   type = list(
     object({
-      DeviceName = string
-      Ebs = object({
-        DeleteOnTermination = bool
-        Encrypted           = bool
-        Iops                = number
-        KmsKeyId            = string
-        SnapshotId          = string
-        VolumeSize          = number
-        VolumeType          = string
-      })
+      DeviceName  = string
+      Ebs         = map(any)
       NoDevice    = string
       VirtualName = string
     })
