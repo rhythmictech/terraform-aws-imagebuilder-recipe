@@ -1,3 +1,9 @@
+data "aws_region" "current" {}
+
+locals {
+  region = data.aws_region.current.name
+}
+
 resource "aws_cloudformation_stack" "this" {
   name               = "${var.name}-${uuid()}"
   on_failure         = "ROLLBACK"
@@ -16,6 +22,7 @@ resource "aws_cloudformation_stack" "this" {
     platform              = var.platform
     update                = var.update
     version               = var.recipe_version
+    region                = local.region
 
     components = [
       for component in var.component_arns : {

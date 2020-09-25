@@ -15,9 +15,9 @@ Resources:
       Components:
         %{~ if update == true ~}
           %{~ if platform == "Linux" ~}
-        ${ indent(8, chomp(yamlencode([{ComponentArn: "arn:aws:imagebuilder:us-east-1:aws:component/update-linux/1.0.0"}])))}
+        ${ indent(8, chomp(yamlencode([{ComponentArn: "arn:aws:imagebuilder:${region}:aws:component/update-linux/1.0.0"}])))}
           %{~ else ~}
-        ${ indent(8, chomp(yamlencode([{ComponentArn: "arn:aws:imagebuilder:us-east-1:aws:component/update-windows/1.0.0"}])))}
+        ${ indent(8, chomp(yamlencode([{ComponentArn: "arn:aws:imagebuilder:${region}:aws:component/update-windows/1.0.0"}])))}
           %{~ endif ~}
         %{~ endif ~}
         ${ indent(8, chomp(yamlencode(components)))}
