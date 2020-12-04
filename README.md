@@ -32,13 +32,13 @@ Creates EC2 Image Builder recipes by wrapping CloudFormation
 | Name | Version |
 |------|---------|
 | terraform | >= 0.12.2 |
-| aws | ~> 2.44 |
+| aws | >= 2.44 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | ~> 2.44 |
+| aws | >= 2.44 |
 
 ## Inputs
 
@@ -59,6 +59,7 @@ Creates EC2 Image Builder recipes by wrapping CloudFormation
 
 | Name | Description |
 |------|-------------|
+| latest\_image\_arn | ARN of the wildcard representing the latest EC2 Image Builder Image |
 | recipe\_arn | ARN of the EC2 Image Builder Recipe |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
