@@ -5,7 +5,7 @@ locals {
 }
 
 output "latest_image_arn" {
-  description = "ARN of the wildcard representing the latest EC2 Image Builder Recipe"
+  description = "ARN of the wildcard representing the latest EC2 Image Builder Image"
   value       = "arn:aws:imagebuilder:${local.region}:${local.account_id}:image/${lower(var.name)}/x.x.x"
 
   depends_on = [
