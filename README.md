@@ -59,7 +59,7 @@ Creates EC2 Image Builder recipes by wrapping CloudFormation
 
 | Name | Description |
 |------|-------------|
-| latest\_recipe\_arn | ARN of the wildcard representing the latest EC2 Image Builder Recipe |
+| latest\_image\_arn | ARN of the wildcard representing the latest EC2 Image Builder Recipe |
 | recipe\_arn | ARN of the EC2 Image Builder Recipe |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
