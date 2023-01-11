@@ -7,12 +7,12 @@ locals {
 }
 
 resource "aws_imagebuilder_image_recipe" "this" {
-  name = var.name
+  name    = var.name
+  version = var.recipe_version
 
   description       = var.description
   parent_image      = var.parent_image
   user_data_base64  = var.user_data_base64
-  version           = var.recipe_version
   working_directory = var.working_directory
 
   systems_manager_agent {

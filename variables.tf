@@ -4,12 +4,6 @@ variable "block_device_mappings" {
   type        = list(any)
 }
 
-variable "cloudformation_timeout" {
-  default     = 10
-  description = "How long to wait (in minutes) for CFN to apply before giving up"
-  type        = number
-}
-
 variable "component_arns" {
   description = "List of component ARNs to use in recipe. Order matters"
   type        = list(string)
