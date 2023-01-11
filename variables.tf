@@ -15,6 +15,12 @@ variable "component_arns" {
   type        = list(string)
 }
 
+variable "component_parameters" {
+  default     = {}
+  description = "A map of component arns (as specified in component_arns) that contains a list of maps of parameters (each parameter contains a name and a value) to apply to the component"
+  type        = map(list(map(string)))
+}
+
 variable "description" {
   default     = null
   description = "description of component"
@@ -43,6 +49,12 @@ variable "recipe_version" {
   type        = string
 }
 
+variable "systems_manager_agent_uninstall_after_build" {
+  default     = false
+  description = "Boolean value for whether or not the systems manager agent should be uninstall from the image after it is built"
+  type        = bool
+}
+
 variable "tags" {
   default     = {}
   description = "Map of tags to use for CFN stack and component"
@@ -53,4 +65,16 @@ variable "update" {
   default     = true
   description = "Whether recipe should include the `update-$platform` recipe before running other components"
   type        = bool
+}
+
+variable "user_data_base64" {
+  default     = null
+  description = "Base64 Encoded user-data to provide when spinning up the build instance."
+  type        = bool
+}
+
+variable "working_directory" {
+  default     = null
+  description = "Working directory to use in the build instance. ImageBuilder uses /tmp by default on Linux, which can be an issue when working with CIS-hardened images."
+  type        = string
 }
