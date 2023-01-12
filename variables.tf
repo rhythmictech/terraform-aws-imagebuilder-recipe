@@ -1,5 +1,5 @@
 variable "block_device_mappings" {
-  default     = null
+  default     = []
   description = "[List of Maps of EBS volumes to mount](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-instanceblockdevicemapping.html) See examples for further usage tips."
   type        = list(any)
 }
