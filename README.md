@@ -1,5 +1,5 @@
 # terraform-aws-imagebuilder-recipe [![](https://github.com/rhythmictech/terraform-aws-imagebuilder-recipe/workflows/pre-commit-check/badge.svg)](https://github.com/rhythmictech/terraform-aws-imagebuilder-recipe/actions) <a href="https://twitter.com/intent/follow?screen_name=RhythmicTech"><img src="https://img.shields.io/twitter/follow/RhythmicTech?style=social&logo=RhythmicTech" alt="follow on Twitter"></a>
-Creates EC2 Image Builder recipes by wrapping CloudFormation
+Creates EC2 Image Builder recipes
 
 ## Example
 Here's what using the module will look like
@@ -26,7 +26,7 @@ module "test_recipe" {
 ## About
 Creates EC2 Image Builder recipes
 
-## Component Parameters
+## Component Parameters (experimental)
 In our experience we haven't needed to provide parameters to the components we include in an Image Builder recipe, so the easiest use case has been to simply include a list of ARNs (component_arns variable).  If you need to provide parameters, you can use the separate component_parameters map, e.g.
 ```hcl
   component_arns = [

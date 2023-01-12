@@ -11,7 +11,7 @@ variable "component_arns" {
 
 variable "component_parameters" {
   default     = {}
-  description = "A map of component arns (as specified in component_arns) that contains a list of maps of parameters (each parameter contains a name and a value) to apply to the component"
+  description = "(Experimental) A map of component arns (as specified in component_arns) that contains a list of maps of parameters (each parameter contains a name and a value) to apply to the component"
   type        = map(list(map(string)))
 }
 
