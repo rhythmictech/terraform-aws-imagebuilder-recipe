@@ -2,7 +2,7 @@ data "aws_region" "current" {}
 
 locals {
   region           = data.aws_region.current.name
-  update_component = var.update ? (var.platform == "Linux" ? ["arn:aws:imagebuilder:$${region}:aws:component/update-linux/x.x.x"] : ["arn:aws:imagebuilder:$${region}:aws:component/update-windows/x.x.x"]) : []
+  update_component = var.update ? (var.platform == "Linux" ? ["arn:aws:imagebuilder:${local.region}:aws:component/update-linux/x.x.x"] : ["arn:aws:imagebuilder:${local.region}:aws:component/update-windows/x.x.x"]) : []
   component_arns   = concat(local.update_component, var.component_arns)
 }
 
