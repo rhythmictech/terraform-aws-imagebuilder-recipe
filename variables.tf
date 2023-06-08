@@ -64,7 +64,7 @@ variable "update" {
 variable "user_data_base64" {
   default     = null
   description = "Base64 Encoded user-data to provide when spinning up the build instance."
-  type        = bool
+  type        = string
 }
 
 variable "working_directory" {
