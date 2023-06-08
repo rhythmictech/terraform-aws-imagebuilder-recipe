@@ -92,7 +92,7 @@ No modules.
 | <a name="input_systems_manager_agent_uninstall_after_build"></a> [systems\_manager\_agent\_uninstall\_after\_build](#input\_systems\_manager\_agent\_uninstall\_after\_build) | Boolean value for whether or not the systems manager agent should be uninstall from the image after it is built | `bool` | `false` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Map of tags to use for CFN stack and component | `map(string)` | `{}` | no |
 | <a name="input_update"></a> [update](#input\_update) | Whether recipe should include the `update-$platform` recipe before running other components | `bool` | `true` | no |
-| <a name="input_user_data_base64"></a> [user\_data\_base64](#input\_user\_data\_base64) | Base64 Encoded user-data to provide when spinning up the build instance. | `bool` | `null` | no |
+| <a name="input_user_data_base64"></a> [user\_data\_base64](#input\_user\_data\_base64) | Base64 Encoded user-data to provide when spinning up the build instance. | `string` | `null` | no |
 | <a name="input_working_directory"></a> [working\_directory](#input\_working\_directory) | Working directory to use in the build instance. ImageBuilder uses /tmp by default on Linux, which can be an issue when working with CIS-hardened images. | `string` | `null` | no |
 
 ## Outputs
