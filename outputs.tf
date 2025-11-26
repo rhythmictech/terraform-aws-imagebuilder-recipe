@@ -1,6 +1,6 @@
 output "latest_image_arn" {
   description = "ARN of the wildcard representing the latest EC2 Image Builder Image"
-  value       = replace(aws_imagebuilder_image_recipe.this.arn, "//[0-9]+.[0-9]+.[0-9]+$/", "/x.x.x")
+  value       = local.latest_image_arn
 }
 
 output "recipe_arn" {

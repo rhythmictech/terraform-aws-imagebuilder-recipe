@@ -4,6 +4,7 @@ locals {
   region           = data.aws_region.current.name
   update_component = var.update ? (var.platform == "Linux" ? ["arn:aws:imagebuilder:${local.region}:aws:component/update-linux/x.x.x"] : ["arn:aws:imagebuilder:${local.region}:aws:component/update-windows/x.x.x"]) : []
   component_arns   = concat(local.update_component, var.component_arns)
+  latest_image_arn = replace(replace(aws_imagebuilder_image_recipe.this.arn, "//[0-9]+.[0-9]+.[0-9]+$/", "/x.x.x"), ":image-recipe/", ":image/")
 }
 
 resource "aws_imagebuilder_image_recipe" "this" {

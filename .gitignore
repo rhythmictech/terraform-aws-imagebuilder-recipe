@@ -13,3 +13,5 @@
 *.pem
 
 *test.yml
+
+.terraform.lock.hcl
