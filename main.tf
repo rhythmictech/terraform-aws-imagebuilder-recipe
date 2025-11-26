@@ -63,4 +63,8 @@ resource "aws_imagebuilder_image_recipe" "this" {
       }
     }
   }
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
